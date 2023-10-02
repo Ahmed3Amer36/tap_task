@@ -1,0 +1,15 @@
+
+
+function missingNumber(nums) {
+  const n = nums.length;
+  
+  // Calculate the sum of all numbers in the range [0, n]
+  const expectedSum = (n * (n + 1)) / 2;
+  
+  // Calculate the sum of the numbers in the given array
+  const actualSum = nums.reduce((sum, num) => sum + num, 0);
+  
+  // The missing number is the difference between the expected sum and the actual sum
+  return expectedSum - actualSum;
+}
+
