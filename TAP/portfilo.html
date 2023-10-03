@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Saleem Amer - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <script>
+        // see more see less function
+        function toggleContent() {
+            const moreContent = document.querySelector('.more-content');
+            const toggleButton = document.querySelector('.toggle-button');
+
+            if (moreContent.style.display === 'none' || moreContent.style.display === '') {
+                moreContent.style.display = 'inline'; // Or 'block' for block-level elements
+                toggleButton.textContent = 'See Less';
+            } else {
+                moreContent.style.display = 'none';
+                toggleButton.textContent = 'See More';
+            }
+        }
+
+        //switching tap function
+        function showSection(id, linkId) {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+
+            document.getElementById('home-link').className = 'none';
+            document.getElementById('about-link').className = 'none';
+            document.getElementById('contact-link').className = 'none';
+
+            document.getElementById(linkId).className = 'active';
+            document.getElementById(id).style.display = 'block';
+        }
+
+        //see my project button function
+        function open_projects_tap() {
+
+            const projects_tap = 'https://github.com/Ahmed3Amer36/tap_task.git';
+
+            // Use window.open() to open the URL in a new tab
+            window.open(projects_tap, '_blank');
+        }
+
+        const openLinkButton = document.getElementById('openLink');
+        openLinkButton.addEventListener('click', open_projects_tap);
+
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a class="active" id="home-link" onclick="showSection('home', 'home-link')"><i class="fa fa-home"
+                            aria-hidden="true"></i>
+                        Home</a></li>
+                <li><a id="about-link" onclick="showSection('about', 'about-link')"><i class="fa fa-user"
+                            aria-hidden="true"></i>
+                        About Me</a></li>
+                <li><a id="contact-link" onclick="showSection('contact', 'contact-link')"><i class="fa fa-phone"
+                            aria-hidden="true"></i>
+                        Contact Me</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section id="home" class="section">
+
+        <div class="content">
+
+            <div class="paragraph-with-image">
+                <div class="text">
+                    <h3 style="color: rgb(32, 214, 214);">Welcome to my site</h3>
+                    <h1>Hi I'm Ahmed, a FullStack <bold style="color:var(--brown-text);">Developer.</bold>
+                    </h1>
+                    <br>
+                    <div class="content">
+                        <p>
+                            I'm a Computer science freash graduated from Palestine technical university -Kadoori- , With
+                            3.36 GPA. 
+                            <span class="more-content"> <br>I had my practical traning at Asal technologies with apple team
+                                from July-2022 to Sep-2022 as a FrontEnd
+                                Developer using angular Framework.</span> 
+                            <a href="#" class="toggle-button" onclick="toggleContent()" style="color: aqua;">See More...</a>
+                        </p>
+                        
+                    </div>
+                </div> <img src="TT.jpg" alt="My picture">
+            </div>
+
+            &nbsp;&nbsp;&nbsp;&nbsp; <button style="background-color: rgb(65, 65, 217); color :white" border-width: 2px
+                onclick="showSection('contact', 'contact-link')"> Hire
+                me ! </button>
+            <button id="projecs" style="background-color: white; color: blue; border-color: blue; border-width: 2px;"
+                onclick="open_projects_tap()"> See my project
+            </button>
+        </div>
+    </section>
+
+
+    <section id="about" class="section" style="display: none;">
+        <div class="content">
+            <br>
+
+            I'm focused on starting my developing joureny and start to
+            develop my experience in
+            programming while working
+            in a real team projects in an compatitive company.
+            <br><br>
+            <h1>Skills : </h1>
+
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>python</li>
+                <li>Angular</li>
+                <li>Flutter</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section id="contact" class="section" style="display: none;">
+        <div class="content">
+            <h1>Contact Me : </h1>
+            <br>
+            <p>Phone : 0599512057</p>
+            <p>Email : ahmed3amer36@gmail.com</p>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
